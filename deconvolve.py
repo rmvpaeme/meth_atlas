@@ -169,10 +169,6 @@ class Deconvolve:
             if input_head.shape[1] < 2:
                 err_msg = 'file must contain at least 2 columns (accessions and a values). '
 
-            # first column must be Illumina IDs column
-            elif not str(input_head.iloc[0, 0]).startswith('cg'):
-                    err_msg = 'invalid Illumina ID column'
-
             # print a warning if the second column in the csv file has a numeric header
             # (this probably means there is no header)
             if input_head.columns[1].replace('.', '', 1).isdigit():
